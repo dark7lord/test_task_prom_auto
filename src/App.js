@@ -16,11 +16,13 @@ function shuffle(array) {
 
 const getDataUsers = (fnSetter) => {
     (async () => {
-        // console.log('get запрос');
         try {
             const data = await fetch("https://jsonplaceholder.typicode.com/users");
             const users = await data.json();
-            fnSetter(shuffle(users));
+            // добавил перемешивание данных, так как данные с адреса выше одни и те же
+            // чтобы было понятно что делается запрос, но каждый раз с другим порядком
+            const shuffledUsers = shuffle(users);
+            fnSetter(shuffledUsers);
 
         } catch (e) {
             console.log(e);

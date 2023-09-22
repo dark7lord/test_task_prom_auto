@@ -1,3 +1,7 @@
+:root {
+    --mobile-width: 688px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -28,6 +32,17 @@ body {
     margin: 0;
     padding: 20px 64px;
     list-style: none;
+
+    @media (max-width: 1250px) {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @media (max-width: 888px) {
+        padding: 16px;
+        grid-template-columns: 1fr;
+    }
 }
 
 .user {
