@@ -1,5 +1,8 @@
 # Тестовое задание для "ПРОМАВТО"
 
+### Cтраница сайта на Github Pages
+<https://dark7lord.github.io/test_task_prom_auto/>
+
 - Ссылка на макет: [Figma](https://www.figma.com/file/TPDTfd38GPfACHjz3AhmU8/TestTask?type=design&node-id=0%3A1&mode=design&t=8LWL6jZuPxfQTy4B-1)
 - Запрос на получения данных: [json api](https://jsonplaceholder.typicode.com/users)
 
