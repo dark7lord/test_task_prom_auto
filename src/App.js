@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EmployersList from "./components/EmployersList";
 import './index.css';
-import useInterval from "./hooks/useInterval";
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -33,9 +32,20 @@ const getDataUsers = (fnSetter) => {
 function App() {
     const [ employers, setEmployers ] = useState([]);
 
-    useInterval(() => {
-        getDataUsers(setEmployers)
-    }, 5000);
+    useEffect(() => {
+        if (employers.length === 0) {
+            getDataUsers(setEmployers);
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            getDataUsers(setEmployers)
+        }, 5000)
+
+        return () => {
+            clearInterval(timer);
+        };
+    });
 
     return (
         <div className="App">
